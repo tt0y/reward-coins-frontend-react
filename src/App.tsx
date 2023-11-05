@@ -12,7 +12,6 @@ import routerBindings, {
 import dataProvider from "@refinedev/simple-rest";
 import {BrowserRouter, Routes, Route, Outlet} from "react-router-dom";
 import {AntdInferencer} from "@refinedev/inferencer/antd";
-
 import {ConfigProvider} from "antd";
 import "@refinedev/antd/dist/reset.css";
 
@@ -33,6 +32,7 @@ const App: React.FC = () => {
                             show: "/user/show/:id",
                             create: "/user/create",
                             edit: "/user/edit/:id",
+                            canDelete: true,
                         },
                         {
                             name: "balance",
@@ -40,6 +40,7 @@ const App: React.FC = () => {
                             show: "/balance/show/:id",
                             create: "/balance/create",
                             edit: "/balance/edit/:id",
+                            canDelete: true,
                         },
                         {
                             name: "coin-type",
@@ -47,6 +48,7 @@ const App: React.FC = () => {
                             show: "/coin-type/show/:id",
                             create: "/coin-type/create",
                             edit: "/coin-type/edit/:id",
+                            canDelete: true,
                         },
                         {
                             name: "exchange-rate",
@@ -54,6 +56,7 @@ const App: React.FC = () => {
                             show: "/exchange-rate/show/:id",
                             create: "/exchange-rate/create",
                             edit: "/exchange-rate/edit/:id",
+                            canDelete: true,
                         },
                         {
                             name: "transaction",
@@ -68,6 +71,7 @@ const App: React.FC = () => {
                             show: "/transaction-type/show/:id",
                             create: "/transaction-type/create",
                             edit: "/transaction-type/edit/:id",
+                            canDelete: true,
                         },
                         {
                             name: "product",
@@ -75,6 +79,7 @@ const App: React.FC = () => {
                             show: "/product/show/:id",
                             create: "/product/create",
                             edit: "/product/edit/:id",
+                            canDelete: true,
                         },
                     ]}
                     options={{
@@ -103,6 +108,10 @@ const App: React.FC = () => {
                                 />
                                 <Route
                                     path="create"
+                                    element={<AntdInferencer/>}
+                                />
+                                <Route
+                                    path="delete/:id"
                                     element={<AntdInferencer/>}
                                 />
                             </Route>
